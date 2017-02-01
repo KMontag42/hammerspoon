@@ -60,6 +60,7 @@ function nextStep(dim, offs, cb)
     end
 
     hs.grid.set(win, cell, screen)
+    hyper.triggered = true
   end
 end
 
@@ -88,6 +89,7 @@ function nextFullScreenStep()
     cell.y = (GRID.h - GRID.h / nextSize) / 2
 
     hs.grid.set(win, cell, screen)
+    hyper.triggered = true
   end
 end
 
@@ -106,6 +108,7 @@ function fullDimension(dim)
     end
 
     hs.grid.set(win, cell, screen)
+    hyper.triggered = true
   end
 end
 
@@ -175,4 +178,5 @@ hyper:bind({}, "i", function ()
   local screen = win:screen()
   cell = hs.grid.get(win, screen)
   hs.alert.show(cell)
+  hyper.triggered = true
 end)
