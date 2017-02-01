@@ -10,6 +10,10 @@ Reloads the hammerspoon config files when there are changes to the directory.
 
 Window positioning and sizing library.
 
+## hyper.lua
+
+hyper/escape key, window selection, etc
+
 ## init.lua
 
-hyper/escape key, require above files, set app focus/open, nested hotkeys too.
+require above files
