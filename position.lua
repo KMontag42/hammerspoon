@@ -180,3 +180,23 @@ hyper:bind({}, "i", function ()
   hs.alert.show(cell)
   hyper.triggered = true
 end)
+
+hyper:bind({}, "pad8", function()
+    local win = hs.window.focusedWindow()
+    win:moveOneScreenNorth()
+end)
+
+hyper:bind({}, "pad2", function()
+    local win = hs.window.focusedWindow()
+    win:moveOneScreenSouth()
+end)
+
+hyper:bind({}, "pad4", function()
+    local win  = hs.window.focusedWindow()
+    win:moveOneScreenEast()
+end)
+
+hyper:bind({}, "pad6", function()
+    local win = hs.window.focusedWindow()
+    win:moveOneScreenWest()
+end)

@@ -3,7 +3,7 @@ hyper = hs.hotkey.modal.new({}, "F17")
 
 -- Trigger existing hyper key shortcuts
 
-hyper:bind({}, 'm', nil, function() hs.eventtap.keyStroke({"cmd","alt","shift","ctrl"}, 'm') end)
+-- hyper:bind({}, 'm', nil, function() hs.eventtap.keyStroke({"cmd","alt","shift","ctrl"}, 'm') end)
 
 -- OR build your own
 
@@ -17,17 +17,17 @@ singleapps = {
   {'l', 'Slack'},
   {'e', 'Emacs'},
   {'t', 'iTerm'},
-  {'c', 'Google Chrome'}
+  {'c', 'Google Chrome'},
+  {'o', 'Finder'}
 }
 
 for i, app in ipairs(singleapps) do
-  hyper:bind({}, app[1], function() hs.alert(app[2]); launch(app[2]); end)
+  hyper:bind({}, app[1], function() launch(app[2]); end)
 end
 
 -- Sequential keybindings, e.g. Hyper-a,f for Finder
 a = hs.hotkey.modal.new({}, "F16")
 apps = {
-  {'f', 'Finder'}
 }
 for i, app in ipairs(apps) do
   a:bind({}, app[1], function() launch(app[2]); a:exit(); end)
@@ -35,7 +35,7 @@ end
 
 pressedA = function() hs.alert('F: Finder'); a:enter() end
 releasedA = function() end
-hyper:bind({}, 'a', nil, pressedA, releasedA)
+-- hyper:bind({}, 'a', nil, pressedA, releasedA)
 
 -- Show grid resizer
 
