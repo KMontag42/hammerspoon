@@ -112,7 +112,7 @@ function fullDimension(dim)
   end
 end
 
-hyper:bind({}, "down", function ()
+hs.hotkey.bind(hyper_mods, "down", function ()
   pressed.down = true
   if pressed.up then 
     fullDimension('h')
@@ -126,7 +126,7 @@ end, function ()
   pressed.down = false
 end)
 
-hyper:bind({}, "right", function ()
+hs.hotkey.bind(hyper_mods, "right", function ()
   pressed.right = true
   if pressed.left then 
     fullDimension('w')
@@ -140,7 +140,7 @@ end, function ()
   pressed.right = false
 end)
 
-hyper:bind({}, "left", function ()
+hs.hotkey.bind(hyper_mods, "left", function ()
   pressed.left = true
   if pressed.right then 
     fullDimension('w')
@@ -154,7 +154,7 @@ end, function ()
   pressed.left = false
 end)
 
-hyper:bind({}, "up", function ()
+hs.hotkey.bind(hyper_mods, "up", function ()
   pressed.up = true
   if pressed.down then 
       fullDimension('h')
@@ -168,11 +168,11 @@ end, function ()
   pressed.up = false
 end)
 
-hyper:bind({}, "f", function ()
+hs.hotkey.bind(hyper_mods, "f", function ()
   nextFullScreenStep()
 end)
 
-hyper:bind({}, "i", function ()
+hs.hotkey.bind(hyper_mods, "i", function ()
   local win = hs.window.frontmostWindow()
   local id = win:id()
   local screen = win:screen()
@@ -181,22 +181,22 @@ hyper:bind({}, "i", function ()
   hyper.triggered = true
 end)
 
-hyper:bind({}, "pad8", function()
+hs.hotkey.bind(hyper_mods, "pad8", function()
     local win = hs.window.focusedWindow()
     win:moveOneScreenNorth()
 end)
 
-hyper:bind({}, "pad2", function()
+hs.hotkey.bind(hyper_mods, "pad2", function()
     local win = hs.window.focusedWindow()
     win:moveOneScreenSouth()
 end)
 
-hyper:bind({}, "pad4", function()
+hs.hotkey.bind(hyper_mods, "pad4", function()
     local win  = hs.window.focusedWindow()
     win:moveOneScreenEast()
 end)
 
-hyper:bind({}, "pad6", function()
+hs.hotkey.bind(hyper_mods, "pad6", function()
     local win = hs.window.focusedWindow()
     win:moveOneScreenWest()
 end)
